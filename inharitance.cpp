@@ -75,55 +75,107 @@ using namespace std;
 //  D d1(1, 2);
 
 // /* 
-// Now the code will work fine, the only issue is compiler will set data_ variable to 0 (default) rather setting it to 1 (user’s input)
-// */
+Now the code will work fine, the only issue is compiler will set data_ variable to 0 (default) rather setting it to 1 (user’s input)
+*/
 
 // return 0;
 // }
-class Vehicle {
-protected:
-    int wheels_count;
-    float max_speed;
-    string manufacturer;
+// class Vehicle {
+// protected:
+//     int wheels_count;
+//     float max_speed;
+//     string manufacturer;
 
-    Vehicle(int, float, string);
-    void vehicle_print();
-};
-Vehicle::Vehicle(int wheels_count, float max_speed,
-				string manufacturer):
-wheels_count(wheels_count),
-max_speed(max_speed),
-manufacturer(manufacturer) {
-    cout << "Vehicle constructor called\n";
-}
-void Vehicle::vehicle_print() {
-    cout << "Wheel Count: " << wheels_count << endl;
-    cout << "Max Speed: " << max_speed << endl;
-    cout << "Manufacturer: " << manufacturer << endl;
-}
+//     Vehicle(int, float, string);
+//     void vehicle_print();
+// };
+// Vehicle::Vehicle(int wheels_count, float max_speed,
+// 				string manufacturer):
+// wheels_count(wheels_count),
+// max_speed(max_speed),
+// manufacturer(manufacturer) {
+//     cout << "Vehicle constructor called\n";
+// }
+// void Vehicle::vehicle_print() {
+//     cout << "Wheel Count: " << wheels_count << endl;
+//     cout << "Max Speed: " << max_speed << endl;
+//     cout << "Manufacturer: " << manufacturer << endl;
+// }
 
-class Automobile : public Vehicle{
-    float engine_cc;
-    int gear_count;
-public:    
-Automobile(int wheels_count, float max_speed,
-		  string manufacturer,
-                float engine_cc, int gear_count):
-    engine_cc(engine_cc),
-    gear_count(gear_count),
-    Vehicle(wheels_count, max_speed, manufacturer) {
-        cout << "Automobile constructor called\n";
+// class Automobile : public Vehicle{
+//     float engine_cc;
+//     int gear_count;
+// public:    
+// Automobile(int wheels_count, float max_speed,
+// 		  string manufacturer,
+//                 float engine_cc, int gear_count):
+//     engine_cc(engine_cc),
+//     gear_count(gear_count),
+//     Vehicle(wheels_count, max_speed, manufacturer) {
+//         cout << "Automobile constructor called\n";
+//     }
+//     void print() {
+//         vehicle_print();
+//         cout << "Engine Capacity: " << engine_cc << endl;
+//         cout << "Gear Count: " << gear_count << endl;
+//     }
+// };
+// int main() {
+//     Automobile automobile(2, 100, "Honda", 125, 4);
+//     automobile.print();
+//     return 0;
+// }
+class N{
+    public:
+    int i;
+    N(){
+        cout<<"N";
     }
-    void print() {
-        vehicle_print();
-        cout << "Engine Capacity: " << engine_cc << endl;
-        cout << "Gear Count: " << gear_count << endl;
+    void n(){
+        cout<<"n";
     }
 };
-int main() {
-    Automobile automobile(2, 100, "Honda", 125, 4);
-    automobile.print();
-    return 0;
+class A: public N{
+    public:
+    int j;
+     A(){
+        cout<<"A";
+    }
+    void d(){
+        cout<<"neha";
+    }
+};
+class B :  public N {
+    public :
+    int k;
+     B(){
+        cout<<"B";
+     }
+    void w(){
+        cout<<"helo";
+    }
+};
+class C: public A,public B{
+
+public:
+int mul;
+ C(){
+        cout<<"C";
+    }
+void x(){
+
 }
 
+};
+int main(){
+    C c;
+    B::c.i=10;
+    c.j=20;
+    c.k=30;
+    c.mul=B::c.i*c.j*c.k;
+    cout<
+    // c x;
+    // x.A;
+    // x.B;
+}
 

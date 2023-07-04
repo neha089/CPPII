@@ -90,56 +90,79 @@ using namespace std;
 //     show(co5);
 // }
 // _________________________________bank_balance___________________________________________
-class amount{
-    long int p_amount;
-    int y;
-    float r;
-    float r_val;
-    public:
-    amount(){}
-    amount(long int p,int y,float r=0.12);
-    amount(long int p,int y,int r);
-    void display(void);
-      void amount(long int p,int y,float r=0.12){
-        p_amount=p;
-        this->y=y;
-        this->r=r;
-        r_val=p_amount;
-        for(int i=1;i<=y;i++){
-            r_val*=(1.0+r);
-        }
-     }
-     void fixed_dep(long int p,int y,int r){
-        p_amount=p;
-        this->y=y;
-        this->r=r;
-        r_val=p_amount;
-        for(int i=1;i<=y;i++){
-            r_val*=(1.0+float(r)/100);
-        }
-     }
-     void display(void){
-        cout<<p_amount<<y<<r_val<<r;
-     }
+// class amount{
+//     long int p_amount;
+//     int y;
+//     float r;
+//     float r_val;
+//     public:
+//     amount(){}
+//     amount(long int p,int y,float r=0.12);
+//     amount(long int p,int y,int r);
+//     void display(void);
+//       void amount(long int p,int y,float r=0.12){
+//         p_amount=p;
+//         this->y=y;
+//         this->r=r;
+//         r_val=p_amount;
+//         for(int i=1;i<=y;i++){
+//             r_val*=(1.0+r);
+//         }
+//      }
+//      void fixed_dep(long int p,int y,int r){
+//         p_amount=p;
+//         this->y=y;
+//         this->r=r;
+//         r_val=p_amount;
+//         for(int i=1;i<=y;i++){
+//             r_val*=(1.0+float(r)/100);
+//         }
+//      }
+//      void display(void){
+//         cout<<p_amount<<y<<r_val<<r;
+//      }
 
-};
-int main(){
-    amount fd1,fd2,fd3;
-    long int p;
-    int y;
-    float r;
-    int R;
-    cin>>p>>y>>r;
-    fd1=amount(p,y,r);
-    cin>>p>>y>>R;
-    fd2=amount(p,y,R);
-    cin>>p>>y;
-    fd3=amount(p,y);
+// };
+// int main(){
+//     amount fd1,fd2,fd3;
+//     long int p;
+//     int y;
+//     float r;
+//     int R;
+//     cin>>p>>y>>r;
+//     fd1=amount(p,y,r);
+//     cin>>p>>y>>R;
+//     fd2=amount(p,y,R);
+//     cin>>p>>y;
+//     fd3=amount(p,y);
     
-    fd1.display();
-    fd2.display();
-    fd3.display();
-}
+//     fd1.display();
+//     fd2.display();
+//     fd3.display();
+// }
+//! copy cons..
+
+// class time {
+//     int sec;
+//     int min;
+// public:
+//     time() {
+//         sec = 0;
+//         min = 0;
+//     }
+//     time(const time &obj) {
+//         cout << "Copy constructor called" << endl;
+//         // sec = obj.sec;
+//         // min = obj.min;
+//     }
+// };
+
+// int main() {
+//     time T1; // default constructor called
+//     time T2(T1); // copy constructor called
+//     time T3 = T2; // copy constructor called
+//     return 0;
+// }
 
 
 
@@ -289,3 +312,37 @@ int main(){
 //     Test t1 = Test(3);
 //     t1.print();
 //     return 0; }
+    
+// class Test{
+//     int i;
+//     public:
+//     Test(const Test y){
+//         i=y.i;
+//     }
+// };
+class demo{
+    static  int count;
+    public :
+    demo(){
+        count++;
+    }
+    demo(const demo &obj){
+        count++;
+    }
+    ~demo(){
+        count--;
+    }
+    static int get(){
+        return count;
+    }
+};
+int demo ::  count ;
+int main(){
+    demo d;
+    demo d1(d);
+    {
+        demo d3;
+        cout<<"curretn obj"<<demo::get()<<endl;
+    }
+    cout<<"curretn obj"<<demo::get()<<endl;
+}

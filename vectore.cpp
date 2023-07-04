@@ -11,6 +11,7 @@
 //!v.at()-->give value at perticular positoin 
 //!v.back()-->return reference of last element of vectore
 
+
 //? u can inislize vecotre like that
 //** vectore<int>v  zero length vectore give size by user input
 //** vectore<int>v1(n) vectore of n size by default
